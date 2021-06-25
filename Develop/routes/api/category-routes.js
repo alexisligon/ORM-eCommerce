@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+  //THIS IS NOT WORKING!!!!
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product }]
@@ -47,6 +48,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
+  //THIS WORKS
   try {
     const categoryData = await Category.destroy({
       where: {
